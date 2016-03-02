@@ -12,6 +12,15 @@
         .auto-style2 {
             width: 200px;
         }
+        .auto-style2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .newStyle1 {
+            font-family: "Times New Roman", Times, serif;
+        }
     </style>
 </head>
 <body>
@@ -20,7 +29,7 @@
     
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">Bulleted List</td>
+                <td class="auto-style2">bulleted list</td>
                 <td>
                     <ul>
                         <li>Rock</li>
@@ -34,7 +43,7 @@
             <tr>
                 <td class="auto-style2">Numbered List</td>
                 <td>
-                    <ol>
+                    <ol class="newStyle1">
                         <li>Jazz</li>
                         <li>Prog</li>
                         <li>Punk</li>
