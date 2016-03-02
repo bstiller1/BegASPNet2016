@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Styles/Styles.css" rel="stylesheet" />
+    <link href="~/Styles/Styles.css" rel="stylesheet" runat="server" />
+    <script src="~/Scripts/modernizr-2.8.3.js" runat="server"></script>
 </head>
 <body>
     <form id="form1" runat="server">
