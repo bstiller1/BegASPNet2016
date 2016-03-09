@@ -7,15 +7,22 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-2.2.1.min.js" />
+            </Scripts>
+        </asp:ScriptManager>
     <div id="PageWrapper">
         <header><a href="~/Default.aspx" runat="server"></a></header>
         <nav><asp:Menu ID="Menu1" runat="server" CssClass="MainMenu" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="False"></asp:Menu>
             <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
             <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowExpandCollapse="False"></asp:TreeView>
         </nav>
+         <section id="MainContent">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
+             </section>
          <aside id="Sidebar"><br />
              <asp:DropDownList ID="ThemeList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ThemeList_SelectedIndexChanged">
                  <asp:ListItem>Monochrome</asp:ListItem>
@@ -23,6 +30,18 @@
              </asp:DropDownList></aside>
      <footer>Footer goes here</footer>
     </div>
+        <asp:PlaceHolder ID="cpClientScript" runat="server">
+            <script type="text/javascript">
+                $(function () {
+                    $('*').css('color', 'Green');
+                    $('#SideBar').css('border-bottom', '2px solid red');
+                    $('h2').bind('click', function () { alert('Hello jQuery') });
+                    $('.SampleClass').addClass('PleaseWait').hide(5000);
+                    $('footer, header').slideUp('slow').slideDown('slow');
+                    $('#Sidebar img').fadeTo(5000, 0.1);
+                })
+            </script>
+        </asp:PlaceHolder>
     </form>
 </body>
 </html>
